@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mental_health_tracker/widgets/left_drawer.dart';
 import 'package:mental_health_tracker/widgets/mood_card.dart';
 
-
 class MyHomePage extends StatelessWidget {
   final String npm = '2306217304'; // NPM
   final String name = 'Clara Aurelia Setiady'; // Nama
