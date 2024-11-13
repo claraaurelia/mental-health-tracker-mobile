@@ -1,28 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:mental_health_tracker/widgets/left_drawer.dart';
 import 'package:mental_health_tracker/widgets/mood_card.dart';
+import 'package:mental_health_tracker/widgets/mood_cart.dart';
 
 class MyHomePage extends StatelessWidget {
-  final String npm = '2306217304'; // NPM
-  final String name = 'Clara Aurelia Setiady'; // Nama
+  final String npm = '2306152115'; // NPM
+  final String name = 'Wirya Dharma Kurnia'; // Nama
   final String className = 'PBP C'; // Kelas
+  final List<ItemHomepage> items = [
+         ItemHomepage("Lihat Mood", Icons.mood),
+         ItemHomepage("Tambah Mood", Icons.add),
+         ItemHomepage("Logout", Icons.logout),
+  ];
+
   MyHomePage({super.key});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final List<ItemHomepage> items = [
-      ItemHomepage("Lihat Mood", Icons.mood),
-      ItemHomepage("Tambah Mood", Icons.add),
-      ItemHomepage("Logout", Icons.logout),
-  ];
-@override
+  @override
   Widget build(BuildContext context) {
     // Scaffold menyediakan struktur dasar halaman dengan AppBar dan body.
     return Scaffold(
@@ -36,10 +29,12 @@ class MyHomePage extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        iconTheme: const IconThemeData(color: Colors.white),
         // Warna latar belakang AppBar diambil dari skema warna tema aplikasi.
         backgroundColor: Theme.of(context).colorScheme.primary,
+        // Mengganti warna icon drawer menjadi putih
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
+      // Masukkan drawer sebagai parameter nilai drawer dari widget Scaffold
       drawer: const LeftDrawer(),
       // Body halaman dengan padding di sekelilingnya.
       body: Padding(
@@ -104,6 +99,7 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
+
 class InfoCard extends StatelessWidget {
   // Kartu informasi yang menampilkan title dan content.
 
@@ -136,4 +132,3 @@ class InfoCard extends StatelessWidget {
     );
   }
 }
-
